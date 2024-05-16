@@ -7,7 +7,7 @@ RUN apk add --no-cache \
        musl-dev \
        libffi-dev \
        py3-pip \
-       py3-yaml gcc linux-headers
+       py3-yaml gcc linux-headers py3-grpcio
 
 COPY requirements.txt /requirements.txt
 
