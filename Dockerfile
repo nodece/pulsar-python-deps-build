@@ -7,7 +7,8 @@ RUN apk add --no-cache \
        musl-dev \
        libffi-dev \
        py3-pip \
-       py3-yaml gcc g++ linux-headers
+       py3-yaml gcc linux-headers
 
-RUN pip3 install --break-system-packages \
-        kazoo ratelimit grpcio==1.62.2
+COPY requirements.txt /requirements.txt
+
+RUN pip3 install --break-system-packages --prefer-binary -r /requirements.txt
